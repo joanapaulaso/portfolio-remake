@@ -1,0 +1,155 @@
+.animate-bounce-slow {
+  -webkit-animation: bounce-slow 3s infinite;
+          animation: bounce-slow 3s infinite;
+}
+
+@-webkit-keyframes bounce-slow {
+  0%,
+    100% {
+    transform: translateY(-25%);
+    opacity: 10%;
+    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 100%;
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+    100% {
+    transform: translateY(-25%);
+    opacity: 10%;
+    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 100%;
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-sphere {
+  -webkit-animation: sphere var(--animation-time) ease alternate infinite;
+          animation: sphere var(--animation-time) ease alternate infinite;
+}
+
+@-webkit-keyframes sphere {
+  0%,
+    100% {
+    transform: translateX(0);
+    opacity: 50%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+
+  50% {
+    transform: translateX(50%);
+    opacity: 20%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+@keyframes sphere {
+  0%,
+    100% {
+    transform: translateX(0);
+    opacity: 50%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+
+  50% {
+    transform: translateX(50%);
+    opacity: 20%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+.animate-sphere-1 {
+  -webkit-animation: sphere-1 var(--animation-time-1) ease alternate infinite;
+          animation: sphere-1 var(--animation-time-1) ease alternate infinite;
+}
+
+@-webkit-keyframes sphere-1 {
+  0%,
+    100% {
+    transform: translateX(-10%);
+    opacity: 50%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+
+  50% {
+    transform: translateX(10%);
+    opacity: 10%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+@keyframes sphere-1 {
+  0%,
+    100% {
+    transform: translateX(-10%);
+    opacity: 50%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+
+  50% {
+    transform: translateX(10%);
+    opacity: 10%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+.animate-sphere-2 {
+  -webkit-animation: sphere-2 var(--animation-time-2) ease alternate infinite;
+          animation: sphere-2 var(--animation-time-2) ease alternate infinite;
+}
+
+@-webkit-keyframes sphere-2 {
+  0%,
+    100% {
+    transform: translateX(-10%);
+    opacity: 80%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+
+  50% {
+    transform: translateX(10%);
+    opacity: 50%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+@keyframes sphere-2 {
+  0%,
+    100% {
+    transform: translateX(-10%);
+    opacity: 80%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+
+  50% {
+    transform: translateX(10%);
+    opacity: 50%;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
