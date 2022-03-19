@@ -27,7 +27,7 @@
         </div>
     </div>
     <div>
-        <div id="nav" class="flex p-5 justify-between lg:px-20">
+        <div id="nav" class="flex p-5 justify-between lg:px-20" x-data="{ open: false }">
             <div class="w-20">
                 <svg class="p-1" viewBox="0 0 67 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -62,7 +62,7 @@
                         fill="black" />
                 </svg>
             </div>
-            <div class="inline-block md:hidden">
+            <div class="inline-block cursor-pointer md:hidden" @click="open = ! open">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -70,21 +70,48 @@
             </div>
             <div class="hidden md:inline-block self-center">
                 <div class="flex justify-between gap-8">
-                    <div class="uppercase text-sm underline underline-offset-1">
+                    <div class="uppercase text-sm underline underline-offset-1 hover:underline-offset-4 hover:text-pink-900">
                         <a href="#what-i-do">
                             WHAT I DO
                         </a>
                     </div>
-                    <div class="uppercase text-sm underline underline-offset-1">
+                    <div class="uppercase text-sm underline underline-offset-1 hover:underline-offset-4 hover:text-pink-900">
                         <a href="#my-work">
                             MY WORK
                         </a>
                     </div>
-                    <div class="uppercase text-sm underline underline-offset-1">
+                    <div class="uppercase text-sm underline underline-offset-1 hover:underline-offset-4 hover:text-pink-900">
                         <a href="#contact">
                             CONTACT
                         </a>
                     </div>
+                </div>
+            </div>
+            <div x-show="open" @click.outside="open = false" x-transition class="z-50 fixed inset-0 py-20 w-[100vw] h-[100vh] bg-white text-center font-playfairsc font-semibold">
+                <div class="absolute -z-50 blur-sm">
+                    <svg width="1113" height="1114" viewBox="0 0 1113 1114" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="556.552" cy="556.737" r="556.342" transform="rotate(90 556.552 556.737)" fill="#FBC4E5"/>
+                    </svg>
+                </div>
+                <div @click="open = ! open" class="pb-10 uppercase text-lg underline underline-offset-1 hover:underline-offset-4 hover:text-pink-900">
+                    <a href="#what-i-do">
+                        WHAT I DO
+                    </a>
+                </div>
+                <div @click="open = ! open" class="py-10 uppercase text-lg underline underline-offset-1 hover:underline-offset-4 hover:text-pink-900">
+                    <a href="#my-work">
+                        MY WORK
+                    </a>
+                </div>
+                <div @click="open = ! open" class="py-10 uppercase text-lg underline underline-offset-1 hover:underline-offset-4 hover:text-pink-900">
+                    <a href="#contact">
+                        CONTACT
+                    </a>
+                </div>
+                <div @click="open = ! open" class="mx-auto pt-10 text-center cursor-pointer">
+                    <svg class="mx-auto" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5 1.5625C15.4008 1.5625 18.1828 2.71484 20.234 4.76602C22.2852 6.8172 23.4375 9.59919 23.4375 12.5C23.4375 15.4008 22.2852 18.1828 20.234 20.234C18.1828 22.2852 15.4008 23.4375 12.5 23.4375C9.59919 23.4375 6.8172 22.2852 4.76602 20.234C2.71484 18.1828 1.5625 15.4008 1.5625 12.5C1.5625 9.59919 2.71484 6.8172 4.76602 4.76602C6.8172 2.71484 9.59919 1.5625 12.5 1.5625V1.5625ZM12.5 11.1734L9.95938 8.63281C9.78346 8.4569 9.54487 8.35807 9.29609 8.35807C9.04732 8.35807 8.80873 8.4569 8.63281 8.63281C8.4569 8.80873 8.35807 9.04732 8.35807 9.29609C8.35807 9.54487 8.4569 9.78346 8.63281 9.95938L11.1734 12.5L8.63281 15.0406C8.54571 15.1277 8.47662 15.2311 8.42948 15.3449C8.38234 15.4587 8.35807 15.5807 8.35807 15.7039C8.35807 15.8271 8.38234 15.9491 8.42948 16.0629C8.47662 16.1767 8.54571 16.2801 8.63281 16.3672C8.71992 16.4543 8.82332 16.5234 8.93713 16.5705C9.05093 16.6177 9.17291 16.6419 9.29609 16.6419C9.41928 16.6419 9.54125 16.6177 9.65506 16.5705C9.76887 16.5234 9.87227 16.4543 9.95938 16.3672L12.5 13.8266L15.0406 16.3672C15.1277 16.4543 15.2311 16.5234 15.3449 16.5705C15.4587 16.6177 15.5807 16.6419 15.7039 16.6419C15.8271 16.6419 15.9491 16.6177 16.0629 16.5705C16.1767 16.5234 16.2801 16.4543 16.3672 16.3672C16.4543 16.2801 16.5234 16.1767 16.5705 16.0629C16.6177 15.9491 16.6419 15.8271 16.6419 15.7039C16.6419 15.5807 16.6177 15.4587 16.5705 15.3449C16.5234 15.2311 16.4543 15.1277 16.3672 15.0406L13.8266 12.5L16.3672 9.95938C16.4543 9.87227 16.5234 9.76887 16.5705 9.65506C16.6177 9.54125 16.6419 9.41928 16.6419 9.29609C16.6419 9.17291 16.6177 9.05093 16.5705 8.93713C16.5234 8.82332 16.4543 8.71992 16.3672 8.63281C16.2801 8.54571 16.1767 8.47662 16.0629 8.42948C15.9491 8.38234 15.8271 8.35807 15.7039 8.35807C15.5807 8.35807 15.4587 8.38234 15.3449 8.42948C15.2311 8.47662 15.1277 8.54571 15.0406 8.63281L12.5 11.1734Z" fill="black"/>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -213,7 +240,7 @@
                 <div class="w-[70vw] flex flex-wrap my-10">
                     <a href="#contact">
                         <div>
-                            <svg width="122" height="36" viewBox="0 0 122 36" fill="none"
+                            <svg class="hover:scale-105 transition-all ease-in-out" width="122" height="36" viewBox="0 0 122 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <rect width="122" height="36" rx="5" fill="#171717" />
                                 <path
@@ -498,7 +525,7 @@
                         </li>
                         <li class="pt-5">
                             <a href="https://wa.me/5521996339390" target="_blank" class="text-gray-600 hover:text-gray-800 w-full">
-                                <div class="flex">
+                                <div class="flex justify-center">
                                     <div>
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20.7415 5.17072C18.6956 3.11993 15.9709 1.992 13.0754 1.992C7.09888 1.992 2.2356 6.85529 2.2356 12.8318C2.2356 14.741 2.73364 16.6063 3.68091 18.2518L2.14282 23.867L7.88989 22.3582C9.47192 23.2225 11.2542 23.6766 13.0706 23.6766H13.0754C19.0471 23.6766 24.0178 18.8133 24.0178 12.8367C24.0178 9.94122 22.7874 7.2215 20.7415 5.17072V5.17072ZM13.0754 21.8504C11.4543 21.8504 9.86743 21.4158 8.4856 20.5955L8.15845 20.4002L4.75024 21.2938L5.65845 17.9686L5.4436 17.6268C4.54028 16.1912 4.06665 14.5359 4.06665 12.8318C4.06665 7.86603 8.10962 3.82306 13.0803 3.82306C15.4875 3.82306 17.7483 4.76056 19.4475 6.46466C21.1467 8.16876 22.1917 10.4295 22.1868 12.8367C22.1868 17.8074 18.0413 21.8504 13.0754 21.8504V21.8504ZM18.0168 15.1024C17.7483 14.9656 16.4153 14.3113 16.1663 14.2234C15.9172 14.1307 15.7366 14.0867 15.5559 14.3602C15.3752 14.6336 14.8577 15.2391 14.6965 15.4246C14.5403 15.6053 14.3792 15.6297 14.1106 15.493C12.5188 14.6971 11.4739 14.0721 10.4241 12.2703C10.1458 11.7918 10.7024 11.826 11.22 10.7908C11.3079 10.6102 11.2639 10.4539 11.1956 10.3172C11.1272 10.1805 10.5852 8.84747 10.3606 8.30548C10.1409 7.77814 9.91626 7.85138 9.75024 7.84161C9.59399 7.83185 9.41333 7.83185 9.23267 7.83185C9.052 7.83185 8.75903 7.90021 8.51001 8.16876C8.26099 8.4422 7.56274 9.0965 7.56274 10.4295C7.56274 11.7625 8.53442 13.0516 8.66626 13.2322C8.80298 13.4129 10.5754 16.1473 13.2952 17.324C15.0139 18.0662 15.6877 18.1297 16.5471 18.0027C17.0696 17.9246 18.1487 17.3484 18.3733 16.7137C18.5979 16.0789 18.5979 15.5369 18.5295 15.4246C18.4661 15.3026 18.2854 15.2342 18.0168 15.1024Z" fill="#0f5e12"/>

@@ -1,7 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=68fe705aaaea7ed498fd6e3981420685",
-    "/css/app.css": "/css/app.css?id=75f2b0552e7d4bfe5b7e57ec409f5b14",
-    "/images/BioOMA.png": "/images/BioOMA.png?id=097c5f551bff875c218c35dfe597998d",
-    "/images/operageo.png": "/images/operageo.png?id=b402287a11280ec3c136627f1da46bd0",
-    "/images/trendom.png": "/images/trendom.png?id=75b3ab26568f179c6fb58925ce775030"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/images/BioOMA.png": "/images/BioOMA.png",
+    "/images/operageo.png": "/images/operageo.png",
+    "/images/trendom.png": "/images/trendom.png"
 }
